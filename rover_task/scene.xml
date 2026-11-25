@@ -1,0 +1,364 @@
+<mujoco model="panthera_ht_rover_cable">
+  <compiler angle="radian" meshdir="../third_party/Panthera-HT_SDK/panthera_python/Panthera-HT_description_V1.1.0/mujoco" texturedir="."/>
+
+  <option timestep="0.001" impratio="10" integrator="implicitfast" cone="elliptic" noslip_iterations="3"/>
+
+  <size nkey="1"/>
+
+  <visual>
+    <global offwidth="1920" offheight="1080"/>
+    <map znear="0.03" shadowscale="1"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" colorspace="auto" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <texture type="2d" colorspace="linear" name="hook_tag" file="assets/hook_tag.png"/>
+    <texture type="2d" colorspace="linear" name="port_tag" file="assets/port_tag.png"/>
+    <material name="groundplane" texture="groundplane" texrepeat="5 5" texuniform="true" reflectance="0.05"/>
+    <material name="hook_tag" texture="hook_tag"/>
+    <material name="port_tag" texture="port_tag"/>
+    <mesh name="base_link_collision" content_type="model/obj" file="meshes/obj/base_link_collision.obj"/>
+    <mesh name="base_link_0" content_type="model/obj" file="meshes/obj/base_link_0.obj"/>
+    <mesh name="base_link_1" content_type="model/obj" file="meshes/obj/base_link_1.obj"/>
+    <mesh name="link1_collision" content_type="model/obj" file="meshes/obj/link1_collision.obj"/>
+    <mesh name="link1_0" content_type="model/obj" file="meshes/obj/link1_0.obj"/>
+    <mesh name="link1_1" content_type="model/obj" file="meshes/obj/link1_1.obj"/>
+    <mesh name="link2_collision" content_type="model/obj" file="meshes/obj/link2_collision.obj"/>
+    <mesh name="link2_0" content_type="model/obj" file="meshes/obj/link2_0.obj"/>
+    <mesh name="link2_1" content_type="model/obj" file="meshes/obj/link2_1.obj"/>
+    <mesh name="link3_collision" content_type="model/obj" file="meshes/obj/link3_collision.obj"/>
+    <mesh name="link3_0" content_type="model/obj" file="meshes/obj/link3_0.obj"/>
+    <mesh name="link3_1" content_type="model/obj" file="meshes/obj/link3_1.obj"/>
+    <mesh name="link4_collision" content_type="model/obj" file="meshes/obj/link4_collision.obj"/>
+    <mesh name="link4_0" content_type="model/obj" file="meshes/obj/link4_0.obj"/>
+    <mesh name="link5_collision" content_type="model/obj" file="meshes/obj/link5_collision.obj"/>
+    <mesh name="link5_0" content_type="model/obj" file="meshes/obj/link5_0.obj"/>
+    <mesh name="link5_1" content_type="model/obj" file="meshes/obj/link5_1.obj"/>
+    <mesh name="link6_collision" content_type="model/obj" file="meshes/obj/link6_collision.obj"/>
+    <mesh name="link6_0" content_type="model/obj" file="meshes/obj/link6_0.obj"/>
+    <mesh name="gripper_center_link_collision" content_type="model/obj" file="meshes/obj/gripper_center_link_collision.obj"/>
+    <mesh name="gripper_center_link_0" content_type="model/obj" file="meshes/obj/gripper_center_link_0.obj"/>
+    <mesh name="gripper_center_link_1" content_type="model/obj" file="meshes/obj/gripper_center_link_1.obj"/>
+    <mesh name="gripper_L_link_collision" content_type="model/obj" file="meshes/obj/gripper_L_link_collision.obj"/>
+    <mesh name="gripper_L_link_0" content_type="model/obj" file="meshes/obj/gripper_L_link_0.obj"/>
+    <mesh name="gripper_L_link_1" content_type="model/obj" file="meshes/obj/gripper_L_link_1.obj"/>
+    <mesh name="gripper_R_link_collision" content_type="model/obj" file="meshes/obj/gripper_R_link_collision.obj"/>
+    <mesh name="gripper_R_link_0" content_type="model/obj" file="meshes/obj/gripper_R_link_0.obj"/>
+    <mesh name="gripper_R_link_1" content_type="model/obj" file="meshes/obj/gripper_R_link_1.obj"/>
+    <mesh name="bore_seg0" vertex="0.0105225 0 0.008 0.0350751 0 0.008 0.0350751 0 0.083 0.0145311 0 0.083 0.0105225 0 0.079 0.0104325 0.00137347 0.008 0.034775 0.00457822 0.008 0.034775 0.00457822 0.083 0.0144068 0.00189669 0.083 0.0104325 0.00137347 0.079"/>
+    <mesh name="bore_seg1" vertex="0.0104325 0.00137347 0.008 0.034775 0.00457822 0.008 0.034775 0.00457822 0.083 0.0144068 0.00189669 0.083 0.0104325 0.00137347 0.079 0.010164 0.00272343 0.008 0.0338799 0.0090781 0.008 0.0338799 0.0090781 0.083 0.014036 0.00376093 0.083 0.010164 0.00272343 0.079"/>
+    <mesh name="bore_seg2" vertex="0.010164 0.00272343 0.008 0.0338799 0.0090781 0.008 0.0338799 0.0090781 0.083 0.014036 0.00376093 0.083 0.010164 0.00272343 0.079 0.00972155 0.0040268 0.008 0.0324052 0.0134227 0.008 0.0324052 0.0134227 0.083 0.013425 0.00556082 0.083 0.00972155 0.0040268 0.079"/>
+    <mesh name="bore_seg3" vertex="0.00972155 0.0040268 0.008 0.0324052 0.0134227 0.008 0.0324052 0.0134227 0.083 0.013425 0.00556082 0.083 0.00972155 0.0040268 0.079 0.00911278 0.00526126 0.008 0.0303759 0.0175375 0.008 0.0303759 0.0175375 0.083 0.0125843 0.00726556 0.083 0.00911278 0.00526126 0.079"/>
+    <mesh name="bore_seg4" vertex="0.00911278 0.00526126 0.008 0.0303759 0.0175375 0.008 0.0303759 0.0175375 0.083 0.0125843 0.00726556 0.083 0.00911278 0.00526126 0.079 0.00834808 0.00640571 0.008 0.0278269 0.0213524 0.008 0.0278269 0.0213524 0.083 0.0115283 0.00884598 0.083 0.00834808 0.00640571 0.079"/>
+    <mesh name="bore_seg5" vertex="0.00834808 0.00640571 0.008 0.0278269 0.0213524 0.008 0.0278269 0.0213524 0.083 0.0115283 0.00884598 0.083 0.00834808 0.00640571 0.079 0.00744055 0.00744055 0.008 0.0248018 0.0248018 0.008 0.0248018 0.0248018 0.083 0.010275 0.010275 0.083 0.00744055 0.00744055 0.079"/>
+    <mesh name="bore_seg6" vertex="0.00744055 0.00744055 0.008 0.0248018 0.0248018 0.008 0.0248018 0.0248018 0.083 0.010275 0.010275 0.083 0.00744055 0.00744055 0.079 0.00640571 0.00834808 0.008 0.0213524 0.0278269 0.008 0.0213524 0.0278269 0.083 0.00884598 0.0115283 0.083 0.00640571 0.00834808 0.079"/>
+    <mesh name="bore_seg7" vertex="0.00640571 0.00834808 0.008 0.0213524 0.0278269 0.008 0.0213524 0.0278269 0.083 0.00884598 0.0115283 0.083 0.00640571 0.00834808 0.079 0.00526126 0.00911278 0.008 0.0175375 0.0303759 0.008 0.0175375 0.0303759 0.083 0.00726556 0.0125843 0.083 0.00526126 0.00911278 0.079"/>
+    <mesh name="bore_seg8" vertex="0.00526126 0.00911278 0.008 0.0175375 0.0303759 0.008 0.0175375 0.0303759 0.083 0.00726556 0.0125843 0.083 0.00526126 0.00911278 0.079 0.0040268 0.00972155 0.008 0.0134227 0.0324052 0.008 0.0134227 0.0324052 0.083 0.00556082 0.013425 0.083 0.0040268 0.00972155 0.079"/>
+    <mesh name="bore_seg9" vertex="0.0040268 0.00972155 0.008 0.0134227 0.0324052 0.008 0.0134227 0.0324052 0.083 0.00556082 0.013425 0.083 0.0040268 0.00972155 0.079 0.00272343 0.010164 0.008 0.0090781 0.0338799 0.008 0.0090781 0.0338799 0.083 0.00376093 0.014036 0.083 0.00272343 0.010164 0.079"/>
+    <mesh name="bore_seg10" vertex="0.00272343 0.010164 0.008 0.0090781 0.0338799 0.008 0.0090781 0.0338799 0.083 0.00376093 0.014036 0.083 0.00272343 0.010164 0.079 0.00137347 0.0104325 0.008 0.00457822 0.034775 0.008 0.00457822 0.034775 0.083 0.00189669 0.0144068 0.083 0.00137347 0.0104325 0.079"/>
+    <mesh name="bore_seg11" vertex="0.00137347 0.0104325 0.008 0.00457822 0.034775 0.008 0.00457822 0.034775 0.083 0.00189669 0.0144068 0.083 0.00137347 0.0104325 0.079 0 0.0105225 0.008 0 0.0350751 0.008 0 0.0350751 0.083 0 0.0145311 0.083 0 0.0105225 0.079"/>
+    <mesh name="bore_seg12" vertex="0 0.0105225 0.008 0 0.0350751 0.008 0 0.0350751 0.083 0 0.0145311 0.083 0 0.0105225 0.079 -0.00137347 0.0104325 0.008 -0.00457822 0.034775 0.008 -0.00457822 0.034775 0.083 -0.00189669 0.0144068 0.083 -0.00137347 0.0104325 0.079"/>
+    <mesh name="bore_seg13" vertex="-0.00137347 0.0104325 0.008 -0.00457822 0.034775 0.008 -0.00457822 0.034775 0.083 -0.00189669 0.0144068 0.083 -0.00137347 0.0104325 0.079 -0.00272343 0.010164 0.008 -0.0090781 0.0338799 0.008 -0.0090781 0.0338799 0.083 -0.00376093 0.014036 0.083 -0.00272343 0.010164 0.079"/>
+    <mesh name="bore_seg14" vertex="-0.00272343 0.010164 0.008 -0.0090781 0.0338799 0.008 -0.0090781 0.0338799 0.083 -0.00376093 0.014036 0.083 -0.00272343 0.010164 0.079 -0.0040268 0.00972155 0.008 -0.0134227 0.0324052 0.008 -0.0134227 0.0324052 0.083 -0.00556082 0.013425 0.083 -0.0040268 0.00972155 0.079"/>
+    <mesh name="bore_seg15" vertex="-0.0040268 0.00972155 0.008 -0.0134227 0.0324052 0.008 -0.0134227 0.0324052 0.083 -0.00556082 0.013425 0.083 -0.0040268 0.00972155 0.079 -0.00526126 0.00911278 0.008 -0.0175375 0.0303759 0.008 -0.0175375 0.0303759 0.083 -0.00726556 0.0125843 0.083 -0.00526126 0.00911278 0.079"/>
+    <mesh name="bore_seg16" vertex="-0.00526126 0.00911278 0.008 -0.0175375 0.0303759 0.008 -0.0175375 0.0303759 0.083 -0.00726556 0.0125843 0.083 -0.00526126 0.00911278 0.079 -0.00640571 0.00834808 0.008 -0.0213524 0.0278269 0.008 -0.0213524 0.0278269 0.083 -0.00884598 0.0115283 0.083 -0.00640571 0.00834808 0.079"/>
+    <mesh name="bore_seg17" vertex="-0.00640571 0.00834808 0.008 -0.0213524 0.0278269 0.008 -0.0213524 0.0278269 0.083 -0.00884598 0.0115283 0.083 -0.00640571 0.00834808 0.079 -0.00744055 0.00744055 0.008 -0.0248018 0.0248018 0.008 -0.0248018 0.0248018 0.083 -0.010275 0.010275 0.083 -0.00744055 0.00744055 0.079"/>
+    <mesh name="bore_seg18" vertex="-0.00744055 0.00744055 0.008 -0.0248018 0.0248018 0.008 -0.0248018 0.0248018 0.083 -0.010275 0.010275 0.083 -0.00744055 0.00744055 0.079 -0.00834808 0.00640571 0.008 -0.0278269 0.0213524 0.008 -0.0278269 0.0213524 0.083 -0.0115283 0.00884598 0.083 -0.00834808 0.00640571 0.079"/>
+    <mesh name="bore_seg19" vertex="-0.00834808 0.00640571 0.008 -0.0278269 0.0213524 0.008 -0.0278269 0.0213524 0.083 -0.0115283 0.00884598 0.083 -0.00834808 0.00640571 0.079 -0.00911278 0.00526126 0.008 -0.0303759 0.0175375 0.008 -0.0303759 0.0175375 0.083 -0.0125843 0.00726556 0.083 -0.00911278 0.00526126 0.079"/>
+    <mesh name="bore_seg20" vertex="-0.00911278 0.00526126 0.008 -0.0303759 0.0175375 0.008 -0.0303759 0.0175375 0.083 -0.0125843 0.00726556 0.083 -0.00911278 0.00526126 0.079 -0.00972155 0.0040268 0.008 -0.0324052 0.0134227 0.008 -0.0324052 0.0134227 0.083 -0.013425 0.00556082 0.083 -0.00972155 0.0040268 0.079"/>
+    <mesh name="bore_seg21" vertex="-0.00972155 0.0040268 0.008 -0.0324052 0.0134227 0.008 -0.0324052 0.0134227 0.083 -0.013425 0.00556082 0.083 -0.00972155 0.0040268 0.079 -0.010164 0.00272343 0.008 -0.0338799 0.0090781 0.008 -0.0338799 0.0090781 0.083 -0.014036 0.00376093 0.083 -0.010164 0.00272343 0.079"/>
+    <mesh name="bore_seg22" vertex="-0.010164 0.00272343 0.008 -0.0338799 0.0090781 0.008 -0.0338799 0.0090781 0.083 -0.014036 0.00376093 0.083 -0.010164 0.00272343 0.079 -0.0104325 0.00137347 0.008 -0.034775 0.00457822 0.008 -0.034775 0.00457822 0.083 -0.0144068 0.00189669 0.083 -0.0104325 0.00137347 0.079"/>
+    <mesh name="bore_seg23" vertex="-0.0104325 0.00137347 0.008 -0.034775 0.00457822 0.008 -0.034775 0.00457822 0.083 -0.0144068 0.00189669 0.083 -0.0104325 0.00137347 0.079 -0.0105225 0 0.008 -0.0350751 0 0.008 -0.0350751 0 0.083 -0.0145311 0 0.083 -0.0105225 0 0.079"/>
+    <mesh name="bore_seg24" vertex="-0.0105225 0 0.008 -0.0350751 0 0.008 -0.0350751 0 0.083 -0.0145311 0 0.083 -0.0105225 0 0.079 -0.0104325 -0.00137347 0.008 -0.034775 -0.00457822 0.008 -0.034775 -0.00457822 0.083 -0.0144068 -0.00189669 0.083 -0.0104325 -0.00137347 0.079"/>
+    <mesh name="bore_seg25" vertex="-0.0104325 -0.00137347 0.008 -0.034775 -0.00457822 0.008 -0.034775 -0.00457822 0.083 -0.0144068 -0.00189669 0.083 -0.0104325 -0.00137347 0.079 -0.010164 -0.00272343 0.008 -0.0338799 -0.0090781 0.008 -0.0338799 -0.0090781 0.083 -0.014036 -0.00376093 0.083 -0.010164 -0.00272343 0.079"/>
+    <mesh name="bore_seg26" vertex="-0.010164 -0.00272343 0.008 -0.0338799 -0.0090781 0.008 -0.0338799 -0.0090781 0.083 -0.014036 -0.00376093 0.083 -0.010164 -0.00272343 0.079 -0.00972155 -0.0040268 0.008 -0.0324052 -0.0134227 0.008 -0.0324052 -0.0134227 0.083 -0.013425 -0.00556082 0.083 -0.00972155 -0.0040268 0.079"/>
+    <mesh name="bore_seg27" vertex="-0.00972155 -0.0040268 0.008 -0.0324052 -0.0134227 0.008 -0.0324052 -0.0134227 0.083 -0.013425 -0.00556082 0.083 -0.00972155 -0.0040268 0.079 -0.00911278 -0.00526126 0.008 -0.0303759 -0.0175375 0.008 -0.0303759 -0.0175375 0.083 -0.0125843 -0.00726556 0.083 -0.00911278 -0.00526126 0.079"/>
+    <mesh name="bore_seg28" vertex="-0.00911278 -0.00526126 0.008 -0.0303759 -0.0175375 0.008 -0.0303759 -0.0175375 0.083 -0.0125843 -0.00726556 0.083 -0.00911278 -0.00526126 0.079 -0.00834808 -0.00640571 0.008 -0.0278269 -0.0213524 0.008 -0.0278269 -0.0213524 0.083 -0.0115283 -0.00884598 0.083 -0.00834808 -0.00640571 0.079"/>
+    <mesh name="bore_seg29" vertex="-0.00834808 -0.00640571 0.008 -0.0278269 -0.0213524 0.008 -0.0278269 -0.0213524 0.083 -0.0115283 -0.00884598 0.083 -0.00834808 -0.00640571 0.079 -0.00744055 -0.00744055 0.008 -0.0248018 -0.0248018 0.008 -0.0248018 -0.0248018 0.083 -0.010275 -0.010275 0.083 -0.00744055 -0.00744055 0.079"/>
+    <mesh name="bore_seg30" vertex="-0.00744055 -0.00744055 0.008 -0.0248018 -0.0248018 0.008 -0.0248018 -0.0248018 0.083 -0.010275 -0.010275 0.083 -0.00744055 -0.00744055 0.079 -0.00640571 -0.00834808 0.008 -0.0213524 -0.0278269 0.008 -0.0213524 -0.0278269 0.083 -0.00884598 -0.0115283 0.083 -0.00640571 -0.00834808 0.079"/>
+    <mesh name="bore_seg31" vertex="-0.00640571 -0.00834808 0.008 -0.0213524 -0.0278269 0.008 -0.0213524 -0.0278269 0.083 -0.00884598 -0.0115283 0.083 -0.00640571 -0.00834808 0.079 -0.00526126 -0.00911278 0.008 -0.0175375 -0.0303759 0.008 -0.0175375 -0.0303759 0.083 -0.00726556 -0.0125843 0.083 -0.00526126 -0.00911278 0.079"/>
+    <mesh name="bore_seg32" vertex="-0.00526126 -0.00911278 0.008 -0.0175375 -0.0303759 0.008 -0.0175375 -0.0303759 0.083 -0.00726556 -0.0125843 0.083 -0.00526126 -0.00911278 0.079 -0.0040268 -0.00972155 0.008 -0.0134227 -0.0324052 0.008 -0.0134227 -0.0324052 0.083 -0.00556082 -0.013425 0.083 -0.0040268 -0.00972155 0.079"/>
+    <mesh name="bore_seg33" vertex="-0.0040268 -0.00972155 0.008 -0.0134227 -0.0324052 0.008 -0.0134227 -0.0324052 0.083 -0.00556082 -0.013425 0.083 -0.0040268 -0.00972155 0.079 -0.00272343 -0.010164 0.008 -0.0090781 -0.0338799 0.008 -0.0090781 -0.0338799 0.083 -0.00376093 -0.014036 0.083 -0.00272343 -0.010164 0.079"/>
+    <mesh name="bore_seg34" vertex="-0.00272343 -0.010164 0.008 -0.0090781 -0.0338799 0.008 -0.0090781 -0.0338799 0.083 -0.00376093 -0.014036 0.083 -0.00272343 -0.010164 0.079 -0.00137347 -0.0104325 0.008 -0.00457822 -0.034775 0.008 -0.00457822 -0.034775 0.083 -0.00189669 -0.0144068 0.083 -0.00137347 -0.0104325 0.079"/>
+    <mesh name="bore_seg35" vertex="-0.00137347 -0.0104325 0.008 -0.00457822 -0.034775 0.008 -0.00457822 -0.034775 0.083 -0.00189669 -0.0144068 0.083 -0.00137347 -0.0104325 0.079 0 -0.0105225 0.008 0 -0.0350751 0.008 0 -0.0350751 0.083 0 -0.0145311 0.083 0 -0.0105225 0.079"/>
+    <mesh name="bore_seg36" vertex="0 -0.0105225 0.008 0 -0.0350751 0.008 0 -0.0350751 0.083 0 -0.0145311 0.083 0 -0.0105225 0.079 0.00137347 -0.0104325 0.008 0.00457822 -0.034775 0.008 0.00457822 -0.034775 0.083 0.00189669 -0.0144068 0.083 0.00137347 -0.0104325 0.079"/>
+    <mesh name="bore_seg37" vertex="0.00137347 -0.0104325 0.008 0.00457822 -0.034775 0.008 0.00457822 -0.034775 0.083 0.00189669 -0.0144068 0.083 0.00137347 -0.0104325 0.079 0.00272343 -0.010164 0.008 0.0090781 -0.0338799 0.008 0.0090781 -0.0338799 0.083 0.00376093 -0.014036 0.083 0.00272343 -0.010164 0.079"/>
+    <mesh name="bore_seg38" vertex="0.00272343 -0.010164 0.008 0.0090781 -0.0338799 0.008 0.0090781 -0.0338799 0.083 0.00376093 -0.014036 0.083 0.00272343 -0.010164 0.079 0.0040268 -0.00972155 0.008 0.0134227 -0.0324052 0.008 0.0134227 -0.0324052 0.083 0.00556082 -0.013425 0.083 0.0040268 -0.00972155 0.079"/>
+    <mesh name="bore_seg39" vertex="0.0040268 -0.00972155 0.008 0.0134227 -0.0324052 0.008 0.0134227 -0.0324052 0.083 0.00556082 -0.013425 0.083 0.0040268 -0.00972155 0.079 0.00526126 -0.00911278 0.008 0.0175375 -0.0303759 0.008 0.0175375 -0.0303759 0.083 0.00726556 -0.0125843 0.083 0.00526126 -0.00911278 0.079"/>
+    <mesh name="bore_seg40" vertex="0.00526126 -0.00911278 0.008 0.0175375 -0.0303759 0.008 0.0175375 -0.0303759 0.083 0.00726556 -0.0125843 0.083 0.00526126 -0.00911278 0.079 0.00640571 -0.00834808 0.008 0.0213524 -0.0278269 0.008 0.0213524 -0.0278269 0.083 0.00884598 -0.0115283 0.083 0.00640571 -0.00834808 0.079"/>
+    <mesh name="bore_seg41" vertex="0.00640571 -0.00834808 0.008 0.0213524 -0.0278269 0.008 0.0213524 -0.0278269 0.083 0.00884598 -0.0115283 0.083 0.00640571 -0.00834808 0.079 0.00744055 -0.00744055 0.008 0.0248018 -0.0248018 0.008 0.0248018 -0.0248018 0.083 0.010275 -0.010275 0.083 0.00744055 -0.00744055 0.079"/>
+    <mesh name="bore_seg42" vertex="0.00744055 -0.00744055 0.008 0.0248018 -0.0248018 0.008 0.0248018 -0.0248018 0.083 0.010275 -0.010275 0.083 0.00744055 -0.00744055 0.079 0.00834808 -0.00640571 0.008 0.0278269 -0.0213524 0.008 0.0278269 -0.0213524 0.083 0.0115283 -0.00884598 0.083 0.00834808 -0.00640571 0.079"/>
+    <mesh name="bore_seg43" vertex="0.00834808 -0.00640571 0.008 0.0278269 -0.0213524 0.008 0.0278269 -0.0213524 0.083 0.0115283 -0.00884598 0.083 0.00834808 -0.00640571 0.079 0.00911278 -0.00526126 0.008 0.0303759 -0.0175375 0.008 0.0303759 -0.0175375 0.083 0.0125843 -0.00726556 0.083 0.00911278 -0.00526126 0.079"/>
+    <mesh name="bore_seg44" vertex="0.00911278 -0.00526126 0.008 0.0303759 -0.0175375 0.008 0.0303759 -0.0175375 0.083 0.0125843 -0.00726556 0.083 0.00911278 -0.00526126 0.079 0.00972155 -0.0040268 0.008 0.0324052 -0.0134227 0.008 0.0324052 -0.0134227 0.083 0.013425 -0.00556082 0.083 0.00972155 -0.0040268 0.079"/>
+    <mesh name="bore_seg45" vertex="0.00972155 -0.0040268 0.008 0.0324052 -0.0134227 0.008 0.0324052 -0.0134227 0.083 0.013425 -0.00556082 0.083 0.00972155 -0.0040268 0.079 0.010164 -0.00272343 0.008 0.0338799 -0.0090781 0.008 0.0338799 -0.0090781 0.083 0.014036 -0.00376093 0.083 0.010164 -0.00272343 0.079"/>
+    <mesh name="bore_seg46" vertex="0.010164 -0.00272343 0.008 0.0338799 -0.0090781 0.008 0.0338799 -0.0090781 0.083 0.014036 -0.00376093 0.083 0.010164 -0.00272343 0.079 0.0104325 -0.00137347 0.008 0.034775 -0.00457822 0.008 0.034775 -0.00457822 0.083 0.0144068 -0.00189669 0.083 0.0104325 -0.00137347 0.079"/>
+    <mesh name="bore_seg47" vertex="0.0104325 -0.00137347 0.008 0.034775 -0.00457822 0.008 0.034775 -0.00457822 0.083 0.0144068 -0.00189669 0.083 0.0104325 -0.00137347 0.079 0.0105225 0 0.008 0.0350751 0 0.008 0.0350751 0 0.083 0.0145311 0 0.083 0.0105225 0 0.079"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.05" type="plane" conaffinity="14" material="groundplane"/>
+    <camera name="overview" quat="0.623032 0.334412 0.334412 0.623032" pos="0.95 0.05 0.75" fovy="50"/>
+    <camera name="hook_view" quat="0.380519 0.207022 0.430734 0.791717" pos="0.35 -0.05 0.42"/>
+    <camera name="port_view" quat="0.771882 0.475674 0.221301 0.359107" pos="0.38 0.12 0.42"/>
+    <light pos="0 -1 2" dir="0 0.447214 -0.894427" cutoff="40" ambient="0.15 0.15 0.15" diffuse="0.9 0.9 0.9"/>
+    <light name="fill" castshadow="false" pos="0 0 2" ambient="0.2 0.2 0.2" diffuse="0.35 0.35 0.35" specular="0 0 0" type="directional"/>
+    <light name="key2" castshadow="false" pos="0.6 0 1.2" dir="-0.371391 0 -0.928477" diffuse="0.45 0.45 0.45"/>
+    <light name="fill2" castshadow="false" pos="-0.4 0 0.9" dir="0.287348 0 -0.957826" diffuse="0.3 0.3 0.3"/>
+    <body name="base_link">
+      <inertial pos="-0.00199372 0.00013575 0.0231364" quat="-0.0111195 0.693211 0.0201775 0.720366" mass="1.26174" diaginertia="0.00208151 0.00152126 0.00149017"/>
+      <geom pos="1.86483e-17 -7.15573e-18 -2.25514e-16" quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="base_link_collision"/>
+      <geom pos="3.25261e-17 -1.36609e-17 -2.42861e-16" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="base_link_0"/>
+      <geom quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="base_link_1"/>
+      <body name="link1" pos="0 0 0.0584">
+        <inertial pos="0.00370227 -0.0005295 0.0255105" quat="0.693281 0.662359 0.202688 -0.198895" mass="0.319476" diaginertia="0.000505313 0.000397193 0.000267803"/>
+        <joint name="joint1" range="-2.70526 2.70526" actuatorfrcrange="-21 21" armature="0.01" damping="1"/>
+        <geom quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="link1_collision"/>
+        <geom quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="link1_0"/>
+        <geom quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link1_1"/>
+        <body name="link2" pos="0.0181985 0 0.0535">
+          <inertial pos="-0.128465 -0.00246834 0.00013928" quat="-0.00306215 0.706512 -0.00274786 0.707689" mass="1.54644" diaginertia="0.023111 0.0229913 0.000457133"/>
+          <joint name="joint2" range="0 3.14159" actuatorfrcrange="-36 36" armature="0.01" damping="1" axis="0 1 0"/>
+          <geom pos="1.08247e-15 -4.66207e-18 -2.00577e-18" quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="link2_collision"/>
+          <geom pos="9.57567e-16 -1.38778e-17 -9.1073e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="link2_0"/>
+          <geom pos="9.71445e-16 -2.60209e-18 -3.06965e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link2_1"/>
+          <body name="link3" pos="-0.26 0 0">
+            <inertial pos="0.159987 -0.00127693 0.051806" quat="0.00837866 0.647052 0.000967254 0.762399" mass="0.73843" diaginertia="0.0064258 0.00637185 0.000587582"/>
+            <joint name="joint3" range="0 4.2" actuatorfrcrange="-36 36" armature="0.01" damping="1" axis="0 -1 0"/>
+            <geom pos="-1.22125e-15 -5.58364e-18 -4.51028e-16" quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="link3_collision"/>
+            <geom pos="-9.71445e-16 -8.13152e-18 -4.92661e-16" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="link3_0"/>
+            <geom pos="-1.19349e-15 -1.97867e-18 -3.60822e-16" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link3_1"/>
+            <body name="link4" pos="0.23 0 0.06">
+              <inertial pos="0.0530228 -0.00088874 0.0417675" quat="-0.00989731 0.44128 0.0170478 0.897153" mass="0.3" diaginertia="0.000550023 0.000451935 0.000137622"/>
+              <joint name="joint4" range="-1.5708 1.5708" actuatorfrcrange="-21 21" armature="0.01" damping="1" axis="0 -1 0"/>
+              <geom pos="-4.30211e-16 -1.58294e-17 -3.46945e-16" quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="link4_collision"/>
+              <geom pos="-4.71845e-16 -1.77809e-17 -3.81639e-16" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link4_0"/>
+              <body name="link5" pos="0.07 -0.000450863 0.0349891">
+                <inertial pos="0.00389691 -7.055e-05 -0.0346556" quat="0.702623 -0.0839722 -0.0802412 0.702019" mass="0.27262" diaginertia="5.34407e-05 4.70313e-05 3.0278e-05"/>
+                <joint name="joint5" range="-1.74533 1.74533" actuatorfrcrange="-10 10" armature="0.01" damping="1" axis="0 0 -1"/>
+                <geom quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="link5_collision"/>
+                <geom quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="link5_0"/>
+                <geom quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link5_1"/>
+                <body name="link6" pos="0.02495 0 -0.0375">
+                  <inertial pos="0.00246634 0 0.00064746" mass="0.00918329" diaginertia="1.19e-06 6.6e-07 5.6e-07"/>
+                  <joint name="joint6" range="-2.79253 2.79253" actuatorfrcrange="-10 10" armature="0.01" damping="1" axis="1 0 0"/>
+                  <geom type="mesh" contype="2" conaffinity="5" group="3" mesh="link6_collision"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="link6_0"/>
+                  <body name="gripper_center_link" pos="0.166051 0 0">
+                    <inertial pos="-0.128853 -9.129e-05 0.00013244" quat="0.508137 0.489632 -0.495987 0.506019" mass="0.22" diaginertia="0.000142641 9.26109e-05 6.8678e-05"/>
+                    <geom pos="6.66134e-16 -2.33442e-18 1.84314e-18" quat="1 0 0 0" type="mesh" contype="2" conaffinity="5" group="3" mesh="gripper_center_link_collision"/>
+                    <geom pos="6.66134e-16 -2.56482e-18 -3.68629e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="gripper_center_link_0"/>
+                    <geom pos="6.38378e-16 -1.59242e-19 -3.09336e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="gripper_center_link_1"/>
+                    <geom name="wrist_cam_body" size="0.012 0.018 0.012" pos="-0.142 0 -0.028" quat="0.707107 0 -0.707107 0" type="box" contype="16" group="1" rgba="0.1 0.1 0.12 1" density="0"/>
+                    <geom name="wrist_cam_lens" size="0.006 0.002" pos="-0.142 0 -0.041" quat="0.707107 0 0 0.707107" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.2 0.3 0.5 1" density="0"/>
+                    <site name="tcp" size="0.004" pos="-0.017 0 0.004" quat="0.707107 0 -0.707107 0" group="4" rgba="1 0 0 0.6"/>
+                    <camera name="wrist" quat="0.707107 0 0 0.707107" pos="-0.142 0 -0.041" fovy="55"/>
+                    <body name="gripper_L_link" pos="-0.00033378 0.041 0">
+                      <inertial pos="-0.0779746 0.0184024 -0.00665317" quat="0.680233 0.333971 0.303173 0.577783" mass="0.08" diaginertia="7.5032e-05 5.83746e-05 3.03834e-05"/>
+                      <joint name="gripper_L_joint" type="slide" range="-0.041 0" armature="0.01" damping="8" axis="0 1 0"/>
+                      <geom pos="2.77556e-16 -6.93889e-17 3.1225e-17" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="3" mesh="gripper_L_link_collision"/>
+                      <geom pos="2.77556e-16 -6.93889e-17 5.20417e-17" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="gripper_L_link_0"/>
+                      <geom pos="3.19189e-16 -7.80626e-17 -3.46945e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="gripper_L_link_1"/>
+                      <geom name="pad_L" size="0.0225 0.004 0.016" pos="-0.0172 0.004 0.004" type="box" contype="8" conaffinity="5" condim="4" group="1" friction="1.5 0.02 0.0005" solref="0.004" solimp="0.95 0.99" rgba="0.15 0.15 0.15 1" density="0"/>
+                      <geom name="finger_L0" size="0.026 0.01175 0.014" pos="-0.0207 0.01225 0" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                      <geom name="finger_L1" size="0.0225 0.01675 0.0245" pos="-0.0692 0.01825 -0.0025" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                      <geom name="finger_L2" size="0.015 0.0165 0.046" pos="-0.1067 0.0185 -0.024" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                    </body>
+                    <body name="gripper_R_link" pos="-0.00033378 -0.041 0">
+                      <inertial pos="-0.0780287 -0.0182879 -0.00538878" quat="0.580968 0.300323 0.337002 0.677283" mass="0.08" diaginertia="7.6435e-05 5.65569e-05 3.36482e-05"/>
+                      <joint name="gripper_R_joint" type="slide" range="0 0.041" armature="0.01" damping="8" axis="0 1 0"/>
+                      <geom pos="4.57967e-16 1.14492e-16 5.0307e-17" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="3" mesh="gripper_R_link_collision"/>
+                      <geom pos="3.46945e-16 7.97973e-17 6.07153e-17" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0117647 0.0117647 0.0117647 1" density="0" mesh="gripper_R_link_0"/>
+                      <geom pos="3.46945e-16 7.63278e-17 1.40946e-18" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.65098 0.65098 0.65098 1" density="0" mesh="gripper_R_link_1"/>
+                      <geom name="pad_R" size="0.0225 0.004 0.016" pos="-0.0172 -0.004 0.004" type="box" contype="8" conaffinity="5" condim="4" group="1" friction="1.5 0.02 0.0005" solref="0.004" solimp="0.95 0.99" rgba="0.15 0.15 0.15 1" density="0"/>
+                      <geom name="finger_R0" size="0.026 0.01175 0.014" pos="-0.0207 -0.01225 0" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                      <geom name="finger_R1" size="0.0225 0.01675 0.0245" pos="-0.0692 -0.01825 -0.0025" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                      <geom name="finger_R2" size="0.015 0.0165 0.046" pos="-0.1067 -0.0185 -0.024" type="box" contype="16" group="3" rgba="1 0.3 0.3 0.3" density="0"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="peg" pos="0 0 0.5">
+      <joint name="peg_free" type="free"/>
+      <geom name="peg_plug" size="0.01 0.0475" pos="0 0 -0.1115" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.05 0.05 0.05 1" density="2700"/>
+      <geom name="peg_groove" size="0.008 0.02" pos="0 0 -0.044" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.22 0.22 0.24 1" density="2700"/>
+      <geom name="peg_spacer" size="0.01 0.005" pos="0 0 -0.019" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.45 0.48 0.52 1" density="2700"/>
+      <geom name="peg_flange_front" size="0.019 0.004" pos="0 0 -0.01" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.1 0.7 0.35 1" density="2700"/>
+      <geom name="peg_neck" size="0.01 0.006" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.45 0.48 0.52 1" density="2700"/>
+      <geom name="peg_flange_rear" size="0.019 0.004" pos="0 0 0.01" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.45 0.48 0.52 1" density="2700"/>
+      <geom name="peg_rear" size="0.013 0.0527691" pos="0 0 0.0667691" type="cylinder" contype="4" conaffinity="11" condim="4" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.12 0.12 0.13 1" density="2700"/>
+      <geom name="cable" size="0.004 0.04" pos="0 0 0.159538" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.95 0.4 0.1 1" density="0"/>
+      <site name="peg_tip" size="0.002" pos="0 0 -0.159" group="4" rgba="0 1 0 1"/>
+      <site name="peg_rear" size="0.002" pos="0 0 0.119538" group="4" rgba="0 1 0 1"/>
+      <site name="peg_grip" size="0.002" pos="0 0 -0.044" group="4" rgba="0 1 0 1"/>
+    </body>
+    <body name="hook" pos="-0.0395 -0.2585 0.178">
+      <geom name="hook0" size="0.004 0.0955 0.02" pos="-0.0045 0.002 -0.078" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.74 0.74 0.71 1"/>
+      <geom name="hook0_vis" size="0.004 0.0955 0.02" pos="-0.0045 0.002 -0.078" type="box" contype="0" conaffinity="0" group="2" rgba="0.74 0.74 0.71 1" density="0"/>
+      <geom name="hook1" size="0.004 0.02 0.044" pos="-0.0045 -0.0735 -0.014" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.74 0.74 0.71 1"/>
+      <geom name="hook1_vis" size="0.004 0.02 0.044" pos="-0.0045 -0.0735 -0.014" type="box" contype="0" conaffinity="0" group="2" rgba="0.74 0.74 0.71 1" density="0"/>
+      <geom name="hook2" size="0.004 0.02 0.044" pos="-0.0045 0.0775 -0.014" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.74 0.74 0.71 1"/>
+      <geom name="hook2_vis" size="0.004 0.02 0.044" pos="-0.0045 0.0775 -0.014" type="box" contype="0" conaffinity="0" group="2" rgba="0.74 0.74 0.71 1" density="0"/>
+      <geom name="hook3" size="0.004 0.0295 0.03" pos="-0.0045 0 0" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.74 0.74 0.71 1"/>
+      <geom name="hook3_vis" size="0.004 0.0295 0.03" pos="-0.0045 0 0" type="box" contype="0" conaffinity="0" group="2" rgba="0.74 0.74 0.71 1" density="0"/>
+      <geom name="hook4" size="0.004 0.012 0.019" pos="-0.0045 -0.0415 0.011" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.74 0.74 0.71 1"/>
+      <geom name="hook4_vis" size="0.004 0.012 0.019" pos="-0.0045 -0.0415 0.011" type="box" contype="0" conaffinity="0" group="2" rgba="0.74 0.74 0.71 1" density="0"/>
+      <geom name="hook_tag" size="0.025 0.025 0.00025" pos="-0.00025 0 0" quat="0.5 0.5 0.5 0.5" type="box" contype="0" conaffinity="0" group="2" density="0" material="hook_tag"/>
+      <geom name="hook_backing" size="0.002 0.0655 0.049" pos="-0.0795 0.002 -0.019" type="box" contype="0" conaffinity="0" group="2" rgba="0.25 0.25 0.27 1" density="0"/>
+    </body>
+    <body name="port" pos="-0.1175 0.3 0.2">
+      <geom name="port_plate" size="0.006 0.12 0.12" pos="-0.0065 0 -0.035" type="box" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.62 0.64 0.68 1"/>
+      <geom name="port_plate_vis" size="0.006 0.12 0.12" pos="-0.0065 0 -0.035" type="box" contype="0" conaffinity="0" group="2" rgba="0.62 0.64 0.68 1" density="0"/>
+      <geom name="port_tag" size="0.025 0.025 0.00025" pos="-0.00025 0 0" quat="0.5 0.5 0.5 0.5" type="box" contype="0" conaffinity="0" group="2" density="0" material="port_tag"/>
+      <body name="bore" pos="-0.0005 0 -0.07" quat="0.707107 0 0.707107 0">
+        <geom name="bore_floor" size="0.035 0.004" pos="0 0 0.004" type="cylinder" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3"/>
+        <geom name="bore_floor_vis" size="0.035 0.004" pos="0 0 0.004" type="cylinder" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0"/>
+        <geom name="bore_seg0" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg0"/>
+        <geom name="bore_seg0_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg0"/>
+        <geom name="bore_seg1" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg1"/>
+        <geom name="bore_seg1_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg1"/>
+        <geom name="bore_seg2" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg2"/>
+        <geom name="bore_seg2_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg2"/>
+        <geom name="bore_seg3" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg3"/>
+        <geom name="bore_seg3_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg3"/>
+        <geom name="bore_seg4" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg4"/>
+        <geom name="bore_seg4_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg4"/>
+        <geom name="bore_seg5" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg5"/>
+        <geom name="bore_seg5_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg5"/>
+        <geom name="bore_seg6" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg6"/>
+        <geom name="bore_seg6_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg6"/>
+        <geom name="bore_seg7" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg7"/>
+        <geom name="bore_seg7_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg7"/>
+        <geom name="bore_seg8" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg8"/>
+        <geom name="bore_seg8_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg8"/>
+        <geom name="bore_seg9" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg9"/>
+        <geom name="bore_seg9_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg9"/>
+        <geom name="bore_seg10" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg10"/>
+        <geom name="bore_seg10_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg10"/>
+        <geom name="bore_seg11" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg11"/>
+        <geom name="bore_seg11_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg11"/>
+        <geom name="bore_seg12" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg12"/>
+        <geom name="bore_seg12_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg12"/>
+        <geom name="bore_seg12_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg12"/>
+        <geom name="bore_seg13" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg13"/>
+        <geom name="bore_seg13_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg13"/>
+        <geom name="bore_seg13_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg13"/>
+        <geom name="bore_seg14" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg14"/>
+        <geom name="bore_seg14_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg14"/>
+        <geom name="bore_seg14_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg14"/>
+        <geom name="bore_seg15" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg15"/>
+        <geom name="bore_seg15_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg15"/>
+        <geom name="bore_seg15_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg15"/>
+        <geom name="bore_seg16" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg16"/>
+        <geom name="bore_seg16_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg16"/>
+        <geom name="bore_seg16_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg16"/>
+        <geom name="bore_seg17" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg17"/>
+        <geom name="bore_seg17_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg17"/>
+        <geom name="bore_seg17_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg17"/>
+        <geom name="bore_seg18" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg18"/>
+        <geom name="bore_seg18_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg18"/>
+        <geom name="bore_seg18_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg18"/>
+        <geom name="bore_seg19" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg19"/>
+        <geom name="bore_seg19_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg19"/>
+        <geom name="bore_seg19_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg19"/>
+        <geom name="bore_seg20" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg20"/>
+        <geom name="bore_seg20_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg20"/>
+        <geom name="bore_seg20_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg20"/>
+        <geom name="bore_seg21" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg21"/>
+        <geom name="bore_seg21_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg21"/>
+        <geom name="bore_seg21_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg21"/>
+        <geom name="bore_seg22" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg22"/>
+        <geom name="bore_seg22_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg22"/>
+        <geom name="bore_seg22_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg22"/>
+        <geom name="bore_seg23" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg23"/>
+        <geom name="bore_seg23_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg23"/>
+        <geom name="bore_seg23_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg23"/>
+        <geom name="bore_seg24" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg24"/>
+        <geom name="bore_seg24_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg24"/>
+        <geom name="bore_seg24_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg24"/>
+        <geom name="bore_seg25" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg25"/>
+        <geom name="bore_seg25_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg25"/>
+        <geom name="bore_seg25_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg25"/>
+        <geom name="bore_seg26" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg26"/>
+        <geom name="bore_seg26_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg26"/>
+        <geom name="bore_seg26_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg26"/>
+        <geom name="bore_seg27" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg27"/>
+        <geom name="bore_seg27_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg27"/>
+        <geom name="bore_seg27_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg27"/>
+        <geom name="bore_seg28" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg28"/>
+        <geom name="bore_seg28_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg28"/>
+        <geom name="bore_seg28_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg28"/>
+        <geom name="bore_seg29" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg29"/>
+        <geom name="bore_seg29_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg29"/>
+        <geom name="bore_seg29_sec" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg29"/>
+        <geom name="bore_seg30" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg30"/>
+        <geom name="bore_seg30_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg30"/>
+        <geom name="bore_seg30_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg30"/>
+        <geom name="bore_seg31" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg31"/>
+        <geom name="bore_seg31_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg31"/>
+        <geom name="bore_seg31_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg31"/>
+        <geom name="bore_seg32" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg32"/>
+        <geom name="bore_seg32_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg32"/>
+        <geom name="bore_seg32_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg32"/>
+        <geom name="bore_seg33" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg33"/>
+        <geom name="bore_seg33_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg33"/>
+        <geom name="bore_seg33_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg33"/>
+        <geom name="bore_seg34" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg34"/>
+        <geom name="bore_seg34_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg34"/>
+        <geom name="bore_seg34_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg34"/>
+        <geom name="bore_seg35" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg35"/>
+        <geom name="bore_seg35_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg35"/>
+        <geom name="bore_seg35_sec" type="mesh" contype="0" conaffinity="0" group="5" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg35"/>
+        <geom name="bore_seg36" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg36"/>
+        <geom name="bore_seg36_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg36"/>
+        <geom name="bore_seg37" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg37"/>
+        <geom name="bore_seg37_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg37"/>
+        <geom name="bore_seg38" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg38"/>
+        <geom name="bore_seg38_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg38"/>
+        <geom name="bore_seg39" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg39"/>
+        <geom name="bore_seg39_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg39"/>
+        <geom name="bore_seg40" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg40"/>
+        <geom name="bore_seg40_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg40"/>
+        <geom name="bore_seg41" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg41"/>
+        <geom name="bore_seg41_vis" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg41"/>
+        <geom name="bore_seg42" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg42"/>
+        <geom name="bore_seg42_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg42"/>
+        <geom name="bore_seg43" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg43"/>
+        <geom name="bore_seg43_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg43"/>
+        <geom name="bore_seg44" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg44"/>
+        <geom name="bore_seg44_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg44"/>
+        <geom name="bore_seg45" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg45"/>
+        <geom name="bore_seg45_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg45"/>
+        <geom name="bore_seg46" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg46"/>
+        <geom name="bore_seg46_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg46"/>
+        <geom name="bore_seg47" quat="1 0 0 0" type="mesh" conaffinity="14" group="3" friction="0.3" solref="0.004" solimp="0.95 0.99 0.0005" rgba="0.5 0.5 0.5 0.3" mesh="bore_seg47"/>
+        <geom name="bore_seg47_vis" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.78 0.8 0.84 1" density="0" mesh="bore_seg47"/>
+        <site name="hole_top" size="0.002" pos="0 0 0.083" group="4" rgba="1 1 0 1"/>
+        <site name="hole_bottom" size="0.002" pos="0 0 0.008" group="4" rgba="1 0 1 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint name="gripper_mimic" joint1="gripper_R_joint" joint2="gripper_L_joint" polycoef="0 -1 0 0 0" solref="0.005"/>
+  </equality>
+
+  <actuator>
+    <general name="joint1_torque" joint="joint1" ctrlrange="-21 21" ctrllimited="true"/>
+    <general name="joint2_torque" joint="joint2" ctrlrange="-36 36" ctrllimited="true"/>
+    <general name="joint3_torque" joint="joint3" ctrlrange="-36 36" ctrllimited="true"/>
+    <general name="joint4_torque" joint="joint4" ctrlrange="-21 21" ctrllimited="true"/>
+    <general name="joint5_torque" joint="joint5" ctrlrange="-10 10" ctrllimited="true"/>
+    <general name="joint6_torque" joint="joint6" ctrlrange="-10 10" ctrllimited="true"/>
+    <general name="gripper" joint="gripper_L_joint" ctrlrange="-0.041 0" forcelimited="true" forcerange="-25 25" input="pos" biastype="affine" gainprm="3000" biasprm="0 -3000"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 2.2 2.6 0.4 0 0 0 0 0 0 0.5 1 0 0 0"/>
+  </keyframe>
+</mujoco>

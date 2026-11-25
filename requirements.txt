@@ -1,0 +1,7 @@
+# Tested with Python 3.12, mujoco 4.0.1
+mujoco>=4.0
+numpy
+pillow
+imageio
+imageio-ffmpeg
+matplotlib
